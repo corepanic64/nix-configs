@@ -28,12 +28,16 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
-          pkgs.vim
-          pkgs.tmux
+          pkgs.tmux # just in case
           pkgs.neofetch
-          pkgs.neovim
-          pkgs.alt-tab-macos
+          pkgs.neovim # texting
+          pkgs.alt-tab-macos # i hate macos cmd+tab
+          pkgs.betterdisplay # scale monitor
+          pkgs.lazygit
         ];
+
+       nixpkgs.config.allowUnfree = true;
+
         system.activationScripts.applications.text = let
           env = pkgs.buildEnv {
             name = "system-applications";
@@ -60,15 +64,17 @@
       homebrew = {
         enable = true;
         casks = [
-         "iina"
+         "iina" # media player
+         "google-chrome" # holy chrome
         ];
         onActivation.cleanup = "zap";
       };
 
       system.primaryUser = "tokhir";
-      # system.defaults = {
-      #  dock.autohide = true;
-      # };
+      system.defaults = {
+        dock.autohide = true;
+        dock.autohide-delay = 0.0;
+      };
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
 
