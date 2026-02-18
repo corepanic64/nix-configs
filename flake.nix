@@ -1,5 +1,5 @@
 {
-  description = "Example nix-darwin system flake";
+  description = "Tokhir's nix-darwin system flake";
 
   inputs = {
     # Nix
@@ -33,7 +33,7 @@
           pkgs.neovim # texting
           pkgs.alt-tab-macos # i hate macos cmd+tab
           pkgs.betterdisplay # scale monitor
-          pkgs.lazygit
+          pkgs.lazygit # tui for git operations
         ];
 
        nixpkgs.config.allowUnfree = true;
