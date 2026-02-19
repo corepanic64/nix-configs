@@ -34,9 +34,17 @@
           pkgs.alt-tab-macos # i hate macos cmd+tab
           pkgs.betterdisplay # scale monitor
           pkgs.lazygit # tui for git operations
+          pkgs.zed-editor # my fav editor rn
+          pkgs.google-chrome # holy chrome
         ];
 
-       nixpkgs.config.allowUnfree = true;
+       nixpkgs.config = {
+         allowUnfree = true;
+         allowBroken = true;
+         permittedInsecurePackages = [
+             "google-chrome-144.0.7559.97"
+         ];
+       };
 
         system.activationScripts.applications.text = let
           env = pkgs.buildEnv {
@@ -65,7 +73,7 @@
         enable = true;
         casks = [
          "iina" # media player
-         "google-chrome" # holy chrome
+         "cloudflare-warp"
         ];
         onActivation.cleanup = "zap";
       };
