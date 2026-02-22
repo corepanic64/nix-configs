@@ -33,7 +33,7 @@
       nv = "nvim";
       mf = "microfetch";
       cl = "clear";
-      reload = "sudo nixos-rebuild switch --flake ";
+      nixreload = "sudo darwin-rebuild switch --flake /etc/nix-darwin#tokhir";
       ee = "exa --tree";
 
       # NixOS related

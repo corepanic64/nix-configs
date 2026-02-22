@@ -3,8 +3,8 @@
 
   inputs = {
     # Nix
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
+    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager = {
@@ -54,6 +54,9 @@
 
             direnv
           ];
+
+          programs.fish.enable = true;
+          home-manager.backupFileExtension = "backup";
 
           nixpkgs.config = {
             allowUnfree = true;

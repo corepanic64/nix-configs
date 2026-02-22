@@ -4,12 +4,29 @@
 }:
 {
   imports = [
-    ../astronvim.nix
+    ../modules/astronvim.nix
+    ../modules/zsh.nix
+    ../modules/fish.nix
   ];
 
   programs.zoxide.enable = true;
   programs.zoxide.enableFishIntegration = true;
 
-  home.packages = with pkgs; [ onefetch ];
+  home.packages = with pkgs; [
+    onefetch
+    fish
+    zsh
+
+    # fish plugins
+
+    fishPlugins.done
+    fishPlugins.forgit
+    fishPlugins.hydro
+    fishPlugins.grc
+    grc
+
+
+    eza
+  ];
   home.stateVersion = "25.11";
 }
