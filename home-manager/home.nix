@@ -7,6 +7,10 @@
     ../modules/astronvim.nix
     ../modules/zsh.nix
     ../modules/fish.nix
+    ../modules/starship.nix
+
+
+    ../packages/home.nix
   ];
 
   programs.zoxide.enable = true;
