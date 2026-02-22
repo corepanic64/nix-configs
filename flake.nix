@@ -7,6 +7,11 @@
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Homebrew
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
@@ -27,6 +32,7 @@
       nix-darwin,
       nixpkgs,
       nix-homebrew,
+      home-manager,
       ...
     }:
     let
@@ -92,6 +98,12 @@
           };
 
           system.primaryUser = "tokhir";
+
+          users.users.tokhir = {
+            name = "tokhir";
+            home = "/Users/tokhir";
+          };
+
           system.defaults = {
             dock.autohide = true;
             dock.autohide-delay = 0.0;
@@ -111,28 +123,36 @@
         };
     in
     {
-      # Build darwin flake using:
-      modules = [
-        nix-homebrew.darwinModules.nix-homebrew
-        {
-          nix-homebrew = {
-            enable = true;
-
-            enableRosetta = true;
-
-            user = "tokhir";
-
-            autoMigrate = true;
-          };
-        }
-      ];
-      imports = [
-        ./astronvim.nix
-      ];
-
       # $ darwin-rebuild build --flake .#tokhir
       darwinConfigurations."tokhir" = nix-darwin.lib.darwinSystem {
-        modules = [ configuration ];
+
+        modules = [
+          configuration
+
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+
+              enableRosetta = true;
+
+              user = "tokhir";
+
+              autoMigrate = true;
+            };
+          }
+
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              extraSpecialArgs = { inherit inputs; };
+              users = {
+                tokhir = import ./home.nix;
+              };
+            };
+          }
+        ];
       };
     }
     // (
