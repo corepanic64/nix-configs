@@ -148,7 +148,7 @@
               useGlobalPkgs = true;
               extraSpecialArgs = { inherit inputs; };
               users = {
-                tokhir = import ./home.nix;
+                tokhir = import ./home-manager/home.nix;
               };
             };
           }
