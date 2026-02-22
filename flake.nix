@@ -55,6 +55,7 @@
             direnv
             starship
           ];
+          environment.shells = [ pkgs.fish ];
 
           imports = [
             ./packages/system.nix
@@ -111,7 +112,7 @@
             name = "tokhir";
             home = "/Users/tokhir";
 
-            shell = "${pkgs.fish}/bin/fish";
+            shell = pkgs.fish;
           };
 
           system.defaults = {
@@ -123,7 +124,6 @@
 
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
-          environment.shells = [ pkgs.fish ];
           # Used for backwards compatibility, please read the changelog before changing.
           # $ darwin-rebuild changelog
           system.stateVersion = 6;
