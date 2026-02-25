@@ -1,13 +1,7 @@
-{
-  inputs,
-  pkgs,
-  ...
+{ pkgs
+, ...
 }:
-let
-  system = pkgs.system;
-in
 {
-
   home.packages =
     with pkgs;
     [
