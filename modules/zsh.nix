@@ -33,7 +33,8 @@
       nv = "nvim";
       mf = "microfetch";
       cl = "clear";
-      nixreload = "sudo darwin-rebuild switch --flake ~/nix#tokhir";
+      lg = "lazygit";
+      nixload = "sudo darwin-rebuild switch --flake ~/nix#tokhir";
       ee = "exa --tree";
 
       # NixOS related

@@ -25,22 +25,17 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: let
+    system = "aarch64-darwin";
+    pkgs = import nixpkgs {inherit system;};
+  in {
+    darwinConfigurations."tokhir" = import ./hosts/darwin inputs;
 
-      ...
-    }@inputs:
-    let
-      system = "aarch64-darwin";
-      pkgs = import nixpkgs { inherit system; };
-    in
-    {
-      # $ darwin-rebuild build --flake .#tokhir
-      darwinConfigurations."tokhir" = import ./hosts/darwin inputs;
-
-      formatter.${system} = pkgs.nixfmt;
-      devShells.${system}.default = import ./shell.nix { inherit self pkgs; };
-    };
+    formatter.${system} = pkgs.nixfmt;
+    devShells.${system}.default = import ./shell.nix {inherit self pkgs;};
+  };
 }

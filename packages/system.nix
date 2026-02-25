@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     git
     vim
@@ -21,7 +17,6 @@
     alejandra
     zsh
     fish
-    starship
 
     tmux # just in case
     neofetch

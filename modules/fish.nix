@@ -16,11 +16,12 @@
       ls = "eza";
       nv = "nvim";
       mf = "microfetch";
+      lg = "lazygit";
 
       die = "shutdown now";
       re = "reboot";
 
-      nixreload = "sudo darwin-rebuild switch --flake ~/nix#tokhir";
+      nixload = "sudo darwin-rebuild switch --flake ~/nix#tokhir";
 
       # NixOS related
       past = "nix profile history --profile /nix/var/nix/profiles/system";

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # archives
     zip
@@ -20,7 +16,6 @@
 
     onefetch # neofetch for git repository
     fastfetch # fast neofetch
-    neofetch # neofetch
     btop # replacement of htop/nmon
     zoxide # for faster navigation
     ffmpeg # shame on you if you don't know it

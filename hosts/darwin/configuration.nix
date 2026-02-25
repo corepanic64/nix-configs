@@ -2,9 +2,8 @@
   self,
   pkgs,
   config,
-  home-manager,
   ...
-}@inputs:
+}:
 {
   imports = [
     ../../packages/system.nix
