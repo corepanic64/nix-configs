@@ -28,14 +28,29 @@
     ];
 
     shellAliases = {
-      zj = "zellij";
-      ls = "eza";
       nv = "nvim";
       mf = "microfetch";
       cl = "clear";
       lg = "lazygit";
       nixload = "sudo darwin-rebuild switch --flake ~/nix#tokhir";
-      ee = "exa --tree";
+      ee = "eza --tree";
+      q = "cd ..";
+      reload = "source ~/.zshrc";
+      change = "vim ~/.zshrc && reload";
+      mc = "java -jar ~/Downloads/TLauncher.jar";
+
+      l = "eza --icons";
+      ls = "eza --icons";
+      ll = "eza -lg --icons";
+      la = "eza -lag --icons";
+      lt = "eza -lTg --icons";
+      lt1 = "eza -lTg --level=1 --icons";
+      lt2 = "eza -lTg --level=2 --icons";
+      lt3 = "eza -lTg --level=3 --icons";
+      lta = "eza -lTag --icons";
+      lta1 = "eza -lTag --level=1 --icons";
+      lta2 = "eza -lTag --level=2 --icons";
+      lta3 = "eza -lTag --level=3 --icons";
 
       # NixOS related
       past = "nix profile history --profile /nix/var/nix/profiles/system";

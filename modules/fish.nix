@@ -12,7 +12,6 @@
     # '';
 
     shellAliases = {
-      zj = "zellij";
       ls = "eza";
       nv = "nvim";
       mf = "microfetch";

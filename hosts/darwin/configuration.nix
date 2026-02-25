@@ -55,6 +55,7 @@
       "cloudflare-warp"
       "freecad"
       "font-hack-nerd-font"
+      "keycastr"
     ];
     onActivation.cleanup = "zap";
   };
