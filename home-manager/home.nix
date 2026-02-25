@@ -3,6 +3,8 @@
   imports = [
     ../packages/home.nix
 
+    ../modules/zed
+
     ../modules/additions.nix
     ../modules/astronvim.nix
     ../modules/zsh.nix
