@@ -54,6 +54,7 @@
       "iina" # media player
       "cloudflare-warp"
       "freecad"
+      "font-hack-nerd-font"
     ];
     onActivation.cleanup = "zap";
   };
