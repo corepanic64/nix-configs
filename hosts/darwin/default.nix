@@ -1,8 +1,12 @@
-{ nix-darwin
-, nix-homebrew
-, home-manager
-, ...
-}@inputs: nix-darwin.lib.darwinSystem {
+{
+  self,
+  nix-darwin,
+  nix-homebrew,
+  home-manager,
+  ...
+}@inputs:
+nix-darwin.lib.darwinSystem {
+  specialArgs = { inherit self; };
 
   modules = [
     ./configuration.nix
@@ -29,4 +33,3 @@
     }
   ];
 }
-

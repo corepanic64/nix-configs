@@ -1,5 +1,6 @@
-{ pkgs
-, ...
+{
+  pkgs,
+  ...
 }:
 {
   environment.systemPackages = with pkgs; [
@@ -20,6 +21,19 @@
     alejandra
     zsh
     fish
+    starship
+
+    tmux # just in case
+    neofetch
+    neovim # texting
+    alt-tab-macos # i hate macos cmd+tab
+    betterdisplay # scale monitor
+    lazygit # tui for git operations
+    zed-editor # my fav editor rn
+    google-chrome # holy chrome
+    pnpm
+
+    direnv
     starship
   ];
 }

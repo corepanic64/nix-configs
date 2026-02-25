@@ -13,14 +13,14 @@
 
     shellAliases = {
       zj = "zellij";
-      ls = "exa";
+      ls = "eza";
       nv = "nvim";
       mf = "microfetch";
 
       die = "shutdown now";
       re = "reboot";
 
-      reload = "sudo darwin-rebuild switch --flake ~/nix#tokhir";
+      nixreload = "sudo darwin-rebuild switch --flake ~/nix#tokhir";
 
       # NixOS related
       past = "nix profile history --profile /nix/var/nix/profiles/system";

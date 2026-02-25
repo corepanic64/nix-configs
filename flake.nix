@@ -26,8 +26,11 @@
   };
 
   outputs =
-    { nixpkgs
-    , ...
+    {
+      self,
+      nixpkgs,
+
+      ...
     }@inputs:
     let
       system = "aarch64-darwin";
@@ -38,6 +41,6 @@
       darwinConfigurations."tokhir" = import ./hosts/darwin inputs;
 
       formatter.${system} = pkgs.nixfmt;
-      devShells.${system}.default = import ./shell.nix { inherit pkgs; };
+      devShells.${system}.default = import ./shell.nix { inherit self pkgs; };
     };
 }

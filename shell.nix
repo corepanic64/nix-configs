@@ -1,6 +1,9 @@
-{ pkgs
-, ...
-}: pkgs.mkShell {
+{
+  self,
+  pkgs,
+  ...
+}:
+pkgs.mkShell {
   packages = with pkgs; [
     nixd
     statix

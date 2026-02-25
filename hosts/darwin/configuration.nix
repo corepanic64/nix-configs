@@ -1,33 +1,21 @@
-{ self
-, pkgs
-, config
-, ...
-}:
 {
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
-    tmux # just in case
-    neofetch
-    neovim # texting
-    alt-tab-macos # i hate macos cmd+tab
-    betterdisplay # scale monitor
-    lazygit # tui for git operations
-    zed-editor # my fav editor rn
-    google-chrome # holy chrome
-    pnpm
-
-    direnv
-    starship
+  self,
+  pkgs,
+  config,
+  home-manager,
+  ...
+}@inputs:
+{
+  imports = [
+    ../../packages/system.nix
   ];
+
   environment.shells = [ pkgs.fish ];
 
-  imports = [
-    ./packages/system.nix
-  ];
+  home-manager.backupFileExtension = "backup";
 
   programs.fish.enable = true;
-  home-manager.backupFileExtension = "backup";
+  # home-manager.backupFileExtension = "backup";
 
   nixpkgs.config = {
     allowUnfree = true;

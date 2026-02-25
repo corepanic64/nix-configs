@@ -29,11 +29,11 @@
 
     shellAliases = {
       zj = "zellij";
-      ls = "exa";
+      ls = "eza";
       nv = "nvim";
       mf = "microfetch";
       cl = "clear";
-      nixreload = "sudo darwin-rebuild switch --flake /etc/nix-darwin#tokhir";
+      nixreload = "sudo darwin-rebuild switch --flake ~/nix#tokhir";
       ee = "exa --tree";
 
       # NixOS related
