@@ -29,17 +29,18 @@
 
     shellAliases = {
       nv = "nvim";
-      mf = "microfetch";
       cl = "clear";
       lg = "lazygit";
       reload = "sudo darwin-rebuild switch --flake ~/nix#$(whoami) && $SHELL";
       nixload = "sudo darwin-rebuild switch --flake ~/nix#tokhir";
       ee = "eza --tree";
       q = "cd ..";
-      # reload = "source ~/.zshrc";
-      change = "vim ~/.zshrc && reload";
+      zreload = "source ~/.zshrc";
+      change = "nv ~/.zshrc && zreload";
       mc = "java -jar ~/Downloads/TLauncher.jar";
       zed = "zeditor";
+      nf = "neofetch";
+      of = "onefetch"; # [bit.ly/4cNKtPK]
 
       l = "eza --icons";
       ls = "eza --icons";
