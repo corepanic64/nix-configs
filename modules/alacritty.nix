@@ -9,8 +9,8 @@
       keyboard = {
         bindings = [
           {
-            key = "Escape";
-            # mode = "Vi";
+            key = "Shift";
+            mods = "Command";
             action = "ToggleViMode";
           }
         ];

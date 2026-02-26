@@ -15,6 +15,15 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
@@ -25,17 +34,20 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: let
-    system = "aarch64-darwin";
-    pkgs = import nixpkgs {inherit system;};
-  in {
-    darwinConfigurations."tokhir" = import ./hosts/darwin inputs;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      ...
+    }@inputs:
+    let
+      system = "aarch64-darwin";
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      darwinConfigurations."tokhir" = import ./hosts/darwin inputs;
 
-    formatter.${system} = pkgs.nixfmt;
-    devShells.${system}.default = import ./shell.nix {inherit self pkgs;};
-  };
+      formatter.${system} = pkgs.nixfmt;
+      devShells.${system}.default = import ./shell.nix { inherit self pkgs; };
+    };
 }

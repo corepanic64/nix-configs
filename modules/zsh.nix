@@ -40,7 +40,7 @@
       mc = "java -jar ~/Downloads/TLauncher.jar";
       zed = "zeditor";
       nf = "neofetch";
-      of = "onefetch"; # [bit.ly/4cNKtPK]
+      of = "onefetch"; # [ bit.ly/4cNKtPK ]
 
       l = "eza --icons";
       ls = "eza --icons";
