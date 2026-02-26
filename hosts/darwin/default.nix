@@ -1,8 +1,8 @@
 {
   self,
   nix-darwin,
-  nix-homebrew,
   home-manager,
+  nix-homebrew,
   ...
 }@inputs:
 nix-darwin.lib.darwinSystem {
@@ -11,8 +11,15 @@ nix-darwin.lib.darwinSystem {
   modules = [
     ./configuration.nix
 
-    nix-darwin.modules.homebrew
-
+    nix-homebrew.darwinModules.nix-homebrew
+    {
+      nix-homebrew = {
+        enable = true;
+        enableRosetta = true;
+        user = "tokhir";
+        autoMigrate = true;
+      };
+    }
     home-manager.darwinModules.home-manager
     {
       home-manager = {

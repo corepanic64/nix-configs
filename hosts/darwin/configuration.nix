@@ -15,11 +15,11 @@
   home-manager.backupFileExtension = "backup";
 
   programs.fish.enable = true;
-  # home-manager.backupFileExtension = "backup";
 
   nixpkgs.config = {
     allowUnfree = true;
     allowBroken = true;
+    allowUnsupportedSystem = true;
     permittedInsecurePackages = [
       "google-chrome-144.0.7559.97"
     ];
