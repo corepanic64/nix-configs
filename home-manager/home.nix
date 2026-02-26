@@ -6,6 +6,7 @@
     ../modules/zed
 
     ../modules/additions.nix
+    ../modules/alacritty.nix
     ../modules/astronvim.nix
     ../modules/zsh.nix
     ../modules/fish.nix

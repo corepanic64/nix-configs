@@ -32,12 +32,14 @@
       mf = "microfetch";
       cl = "clear";
       lg = "lazygit";
+      reload = "sudo darwin-rebuild switch --flake ~/nix#$(whoami) && $SHELL";
       nixload = "sudo darwin-rebuild switch --flake ~/nix#tokhir";
       ee = "eza --tree";
       q = "cd ..";
-      reload = "source ~/.zshrc";
+      # reload = "source ~/.zshrc";
       change = "vim ~/.zshrc && reload";
       mc = "java -jar ~/Downloads/TLauncher.jar";
+      zed = "zeditor";
 
       l = "eza --icons";
       ls = "eza --icons";
