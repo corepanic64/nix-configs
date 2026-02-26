@@ -11,15 +11,7 @@ nix-darwin.lib.darwinSystem {
   modules = [
     ./configuration.nix
 
-    nix-homebrew.darwinModules.nix-homebrew
-    {
-      nix-homebrew = {
-        enable = true;
-        enableRosetta = true;
-        user = "tokhir";
-        autoMigrate = true;
-      };
-    }
+    nix-darwin.modules.homebrew
 
     home-manager.darwinModules.home-manager
     {

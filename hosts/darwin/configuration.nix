@@ -7,6 +7,7 @@
 {
   imports = [
     ../../packages/system.nix
+    ../../packages/homebrew.nix
   ];
 
   environment.shells = [ pkgs.fish ];
@@ -47,18 +48,6 @@
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
-
-  homebrew = {
-    enable = true;
-    casks = [
-      "iina" # media player
-      "cloudflare-warp"
-      "freecad"
-      "font-hack-nerd-font"
-      "keycastr"
-    ];
-    onActivation.cleanup = "zap";
-  };
 
   system.primaryUser = "tokhir";
 
