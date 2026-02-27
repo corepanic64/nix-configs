@@ -2,7 +2,7 @@
 {
   imports = [
     ../packages/home.nix
-    ../packages/git.nix
+    ../modules/git.nix
     ../modules/zed
     ../modules/firefox.nix
     ../modules/additions.nix

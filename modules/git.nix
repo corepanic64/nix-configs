@@ -19,7 +19,7 @@
 
     settings = {
       user = {
-        name = "corepanic64";
+        name = "Toxir Isakulov";
         email = "isakulovtohir902@gmail.com";
       };
 
