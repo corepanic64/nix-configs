@@ -9,7 +9,7 @@
       keyboard = {
         bindings = [
           {
-            key = "Shift";
+            key = "K";
             mods = "Command";
             action = "ToggleViMode";
           }

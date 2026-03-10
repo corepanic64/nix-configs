@@ -40,7 +40,10 @@
       mc = "java -jar ~/Downloads/TLauncher.jar";
       zed = "zeditor";
       nf = "neofetch";
-      of = "onefetch"; # [ bit.ly/4cNKtPK ]
+      of = "onefetch";
+      c = "cargo run";
+      dev = "npm run dev";
+      build = "npm run build";
 
       l = "eza --icons";
       ls = "eza --icons";

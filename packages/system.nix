@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    git
     vim
     wget
     micro
@@ -27,7 +26,6 @@
     lazygit # tui for git operations
     zed-editor # my fav editor rn
     google-chrome # holy chrome
-    pnpm
 
     direnv
     starship
