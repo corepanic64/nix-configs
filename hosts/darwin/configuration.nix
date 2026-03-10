@@ -61,6 +61,10 @@
   system.defaults = {
     dock.autohide = true;
     dock.autohide-delay = 0.0;
+    NSGlobalDomain = {
+      KeyRepeat = 2;
+      InitialKeyRepeat = 15;
+    };
   };
   # Enable alternative shell support in nix-darwin.
   # programs.fish.enable = true;
