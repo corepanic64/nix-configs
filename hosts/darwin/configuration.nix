@@ -53,17 +53,20 @@
 
   users.users.tokhir = {
     name = "tokhir";
-    home = "/Users/tokhir";
 
+    home = "/Users/tokhir";
     shell = pkgs.fish;
   };
 
   system.defaults = {
-    dock.autohide = true;
-    dock.autohide-delay = 0.0;
+    dock = {
+      autohide = true;
+      autohide-delay = 0.0;
+    };
+
     NSGlobalDomain = {
-      KeyRepeat = 2;
-      InitialKeyRepeat = 15;
+      KeyRepeat = 1;
+      InitialKeyRepeat = 10;
     };
   };
   # Enable alternative shell support in nix-darwin.
