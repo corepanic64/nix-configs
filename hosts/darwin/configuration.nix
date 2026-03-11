@@ -65,8 +65,8 @@
     };
 
     NSGlobalDomain = {
-      KeyRepeat = 8;
-      InitialKeyRepeat = 20;
+      KeyRepeat = 2;
+      InitialKeyRepeat = 15;
     };
   };
   # Enable alternative shell support in nix-darwin.

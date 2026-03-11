@@ -15,6 +15,7 @@
       "nix"
       "make"
       "env"
+      "git-firefly"
     ];
   };
 }

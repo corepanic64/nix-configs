@@ -17,6 +17,7 @@
     alejandra
     zsh
     fish
+    pnpm
 
     tmux # just in case
     neofetch
