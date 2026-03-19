@@ -82,6 +82,12 @@
   project_panel = {
     dock = "right";
   };
+  file_scan_exclusions = [
+      ".git"
+      "node_modules"
+      ".DS_Store"
+      "package-lock.json"
+    ];
   use_autoclose = true;
   languages = {
     TypeScript = {

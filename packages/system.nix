@@ -18,6 +18,7 @@
     zsh
     fish
     pnpm
+    postman
 
     tmux # just in case
     neofetch
